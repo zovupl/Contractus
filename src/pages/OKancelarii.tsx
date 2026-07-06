@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
-import { Stats, FinalCta } from "../components/Sections";
-import Reveal from "../components/Reveal";
-
-const team = [
-  { name: "mec. Anna Kowalczyk", role: "Radca prawny · służebność przesyłu" },
-  { name: "mec. Piotr Zieliński", role: "Radca prawny · szkody komunikacyjne" },
-  { name: "Magdalena Nowak", role: "Specjalistka ds. kredytów konsumenckich" },
-];
+import { Stats, FinalCta, Team } from "../components/Sections";
 
 export default function OKancelarii() {
   return (
@@ -56,27 +49,7 @@ export default function OKancelarii() {
       </section>
 
       <Stats />
-
-      <section className="block soft">
-        <div className="wrap">
-          <Reveal className="head">
-            <span className="eyebrow">Zespół</span>
-            <h2>Ludzie, którzy poprowadzą Twoją sprawę</h2>
-          </Reveal>
-          <div className="cards">
-            {team.map((t) => (
-              <Reveal key={t.name} className="svc">
-                <div className="ph" style={{ height: 180, borderRadius: 12, marginBottom: 16, background: "linear-gradient(160deg,var(--navy),var(--navy-2))", display: "grid", placeItems: "center", color: "rgba(255,255,255,.3)", fontSize: 13 }}>
-                  [ zdjęcie ]
-                </div>
-                <h3>{t.name}</h3>
-                <p>{t.role}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <Team />
       <FinalCta />
     </>
   );

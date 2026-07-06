@@ -118,21 +118,45 @@ export const stats = [
   { n: "4,9", unit: "★", t: "średnia ocen Google" },
 ];
 
+const asset = (p: string) => `${import.meta.env.BASE_URL}${p}`;
+
+// UWAGA: zdjęcia i nazwiska to placeholdery — do podmiany na realny zespół i opinie klienta.
+export const advisor = {
+  name: "mec. Anna Kowalczyk",
+  role: "Radca prawny",
+  license: "Wpis na listę radców prawnych OIRP · nr Wa-XXXX",
+  photo: asset("img/anna.jpg"),
+  quote:
+    "Nie musisz znać się na prawie — od tego jestem ja. A Ty płacisz dopiero wtedy, gdy wywalczymy pieniądze.",
+};
+
+export const team = [
+  { name: "mec. Anna Kowalczyk", role: "Radca prawny · służebność przesyłu", photo: asset("img/anna.jpg") },
+  { name: "mec. Piotr Zieliński", role: "Radca prawny · szkody komunikacyjne", photo: asset("img/piotr.jpg") },
+  { name: "Magdalena Nowak", role: "Specjalistka ds. kredytów konsumenckich", photo: asset("img/magda.jpg") },
+];
+
 export const reviews = [
   {
     src: "Google",
+    photo: asset("img/marek.jpg"),
     q: "Słupy stały u mnie 15 lat. Dostałem 54 tysiące i nie wyłożyłem ani grosza z góry.",
-    who: "Marek W., rolnik spod Kielc",
+    who: "Marek W.",
+    place: "rolnik spod Kielc",
   },
   {
     src: "Trustpilot",
+    photo: asset("img/kasia.jpg"),
     q: "Ubezpieczyciel dał 8 tys. Pani mecenas wywalczyła 31 tys. Polecam każdemu.",
-    who: "Katarzyna P., Poznań",
+    who: "Katarzyna P.",
+    place: "Poznań",
   },
   {
     src: "Facebook",
+    photo: asset("img/tomasz.jpg"),
     q: "Myślałem, że to nie dla mnie. Analiza była darmowa, a kredyt spłacam bez odsetek.",
-    who: "Tomasz L., Rzeszów",
+    who: "Tomasz L.",
+    place: "Rzeszów",
   },
 ];
 

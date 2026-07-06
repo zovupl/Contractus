@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import LeadForm from "../components/LeadForm";
-import { MediaStrip, Stats, ServicesGrid, Steps, Reviews, FinalCta } from "../components/Sections";
+import { MediaStrip, Stats, ServicesGrid, Steps, Reviews, FinalCta, Team, PeopleStrip } from "../components/Sections";
 import Reveal from "../components/Reveal";
+import { advisor } from "../data";
 
 export default function Home() {
   return (
@@ -51,14 +52,12 @@ export default function Home() {
       <div className="why">
         <div className="wrap">
           <Reveal className="advisor">
-            <div className="ph">[ zdjęcie: radca prawny ]</div>
+            <img className="photo" src={advisor.photo} alt={advisor.name} />
             <div className="b">
-              <div className="name">mec. Anna Kowalczyk</div>
-              <div className="role">Radca prawny · prowadzi Twoją sprawę</div>
-              <div className="quote">
-                „Nie musisz znać się na prawie — od tego jestem ja. A Ty płacisz
-                dopiero wtedy, gdy wywalczymy pieniądze."
-              </div>
+              <div className="name">{advisor.name}</div>
+              <div className="role">{advisor.role} · prowadzi Twoją sprawę</div>
+              <div className="quote">„{advisor.quote}"</div>
+              <div className="cred"><span className="b">⚖️</span> {advisor.license}</div>
             </div>
           </Reveal>
           <Reveal>
@@ -69,10 +68,12 @@ export default function Home() {
               <li><span className="ck">✓</span><div><b>Konkretna osoba, nie infolinia.</b><p>Twoją sprawę prowadzi radca prawny, do którego masz bezpośredni kontakt.</p></div></li>
               <li><span className="ck">✓</span><div><b>Bez formalności po Twojej stronie.</b><p>Dokumenty, mapy, pisma i negocjacje z ubezpieczycielem bierzemy na siebie.</p></div></li>
             </ul>
+            <div style={{ marginTop: 24 }}><PeopleStrip /></div>
           </Reveal>
         </div>
       </div>
 
+      <Team />
       <Steps />
       <Reviews />
       <FinalCta />

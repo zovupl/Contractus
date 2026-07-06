@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { services, stats, reviews } from "../data";
+import { services, stats, reviews, team } from "../data";
 import Reveal from "./Reveal";
 import LeadForm from "./LeadForm";
 
@@ -93,12 +93,17 @@ export function Reviews() {
         <div className="revs">
           {reviews.map((r) => (
             <Reveal key={r.who} className="rc">
-              <div className="top">
-                <span className="stars">★★★★★</span>
-                <span className="src">{r.src}</span>
+              <div className="rev-head">
+                <img className="avatar" src={r.photo} alt={r.who} width={48} height={48} loading="lazy" />
+                <div>
+                  <div className="who">{r.who}</div>
+                  <div className="place">{r.place}</div>
+                </div>
+                <span className="src" style={{ marginLeft: "auto" }}>{r.src}</span>
               </div>
+              <div className="stars">★★★★★</div>
               <div className="q">„{r.q}"</div>
-              <div className="who">{r.who}</div>
+              <span className="verified">✓ Zweryfikowana opinia</span>
             </Reveal>
           ))}
         </div>
@@ -122,6 +127,45 @@ export function FinalCta() {
           <input type="tel" placeholder="Telefon" aria-label="Telefon" />
           <button className="btn btn-gold">Oddzwońcie do mnie</button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+export function Team() {
+  return (
+    <section className="block soft">
+      <div className="wrap">
+        <Reveal className="head">
+          <span className="eyebrow">Poznaj zespół</span>
+          <h2>Ludzie, którzy poprowadzą Twoją sprawę</h2>
+          <p>Nie infolinia i nie anonimowa kontora — konkretne osoby z imienia i nazwiska.</p>
+        </Reveal>
+        <div className="cards">
+          {team.map((t) => (
+            <Reveal key={t.name} className="svc">
+              <img className="team-photo" src={t.photo} alt={t.name} loading="lazy" />
+              <h3>{t.name}</h3>
+              <p>{t.role}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PeopleStrip() {
+  return (
+    <div className="people">
+      <div className="faces">
+        {team.map((t) => (
+          <img key={t.name} src={t.photo} alt={t.name} loading="lazy" />
+        ))}
+      </div>
+      <div className="txt">
+        <b>Prawdziwi ludzie, nie infolinia.</b>
+        <p>Twoją sprawę prowadzi konkretny radca prawny — masz z nim bezpośredni kontakt.</p>
       </div>
     </div>
   );
