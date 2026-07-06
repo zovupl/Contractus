@@ -171,14 +171,14 @@ export function PeopleStrip() {
   );
 }
 
-export function ConsultAside({ context }: { context: string }) {
+export function ConsultAside({ context, defaultTopic }: { context: string; defaultTopic?: string }) {
   return (
     <aside className="aside">
       <h3>Bezpłatna konsultacja</h3>
       <div className="free">
         <b>0 zł</b><span>za analizę i wycenę sprawy</span>
       </div>
-      <LeadForm context={context} />
+      <LeadForm context={context} defaultTopic={defaultTopic} />
     </aside>
   );
 }

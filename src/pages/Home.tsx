@@ -38,7 +38,7 @@ export default function Home() {
             <h3>Zamów bezpłatną konsultację</h3>
             <p className="ld">Oddzwaniamy w 24 godziny i mówimy, ile możesz odzyskać.</p>
             <div className="free"><b>0 zł</b><span>za analizę i wycenę Twojej sprawy</span></div>
-            <LeadForm context="Formularz główny — strona główna" showTopic />
+            <LeadForm context="Formularz główny — strona główna" />
           </div>
         </div>
       </section>

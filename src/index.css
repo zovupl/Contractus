@@ -74,6 +74,8 @@ a{color:inherit;text-decoration:none;}
 
 /* form */
 .form-grid{display:flex;flex-direction:column;gap:12px;}
+.form-grid .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:480px){.form-grid .row2{grid-template-columns:1fr;}}
 .form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:13px 14px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;}
 .form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,114,190,.15);}
 .consent{display:flex;gap:8px;align-items:flex-start;font-size:11.5px;color:var(--muted);}

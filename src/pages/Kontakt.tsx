@@ -20,7 +20,7 @@ export default function Kontakt() {
               <span className="tag">✓ Pierwsza konsultacja gratis</span>
               <h3>Napisz do nas</h3>
               <p className="ld">Wypełnij formularz — resztą zajmiemy się my.</p>
-              <LeadForm context="Strona kontakt" showTopic />
+              <LeadForm context="Strona kontakt" />
             </div>
           </div>
 

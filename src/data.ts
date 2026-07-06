@@ -3,6 +3,7 @@ export type Service = {
   icon: string;
   title: string;
   navTitle: string;
+  topic: string;
   short: string;
   lead: string;
   intro: string[];
@@ -11,12 +12,21 @@ export type Service = {
   primary?: boolean;
 };
 
+// Tematy rozmowy w formularzu (można rozszerzać w miarę usług kancelarii).
+export const topics = [
+  "Roszczenia przesyłowe – słupy / linie / gazociągi",
+  "Wypadek komunikacyjny (mój lub bliskiego)",
+  "Sankcja kredytu darmowego",
+  "Inna sprawa",
+];
+
 export const services: Service[] = [
   {
     slug: "sluzebnosc-przesylu",
     icon: "🗼",
     title: "Służebność przesyłu — odszkodowanie za słupy i linie",
     navTitle: "Słupy na działce",
+    topic: "Roszczenia przesyłowe – słupy / linie / gazociągi",
     short:
       "Słupy, linie SN/WN i gazociągi na Twoim gruncie? Należy Ci się wynagrodzenie — nawet 10 lat wstecz.",
     lead:
@@ -53,6 +63,7 @@ export const services: Service[] = [
     icon: "🚗",
     title: "Szkody komunikacyjne — pełne odszkodowanie po wypadku",
     navTitle: "Wypadki",
+    topic: "Wypadek komunikacyjny (mój lub bliskiego)",
     short:
       "Ubezpieczyciel zaniżył wypłatę po wypadku lub kolizji? Dochodzimy pełnej kwoty.",
     lead:
@@ -84,6 +95,7 @@ export const services: Service[] = [
     icon: "🏦",
     title: "Sankcja kredytu darmowego — odzyskaj odsetki i prowizje",
     navTitle: "Kredyty",
+    topic: "Sankcja kredytu darmowego",
     short:
       "Bank naruszył ustawę o kredycie konsumenckim? Możesz spłacać wyłącznie kapitał — bez odsetek i kosztów.",
     lead:

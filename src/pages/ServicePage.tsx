@@ -41,7 +41,7 @@ export default function ServicePage({ slug }: { slug: string }) {
             </div>
           </div>
 
-          <Reveal><ConsultAside context={s.navTitle} /></Reveal>
+          <Reveal><ConsultAside context={s.navTitle} defaultTopic={s.topic} /></Reveal>
         </div>
       </section>
 

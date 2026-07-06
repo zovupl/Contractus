@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { services } from "../data";
+import { topics } from "../data";
 
-type Props = { context?: string; showTopic?: boolean };
+type Props = { context?: string; defaultTopic?: string };
 
-export default function LeadForm({ context = "Kontakt ogólny", showTopic }: Props) {
+export default function LeadForm({ context = "Kontakt ogólny", defaultTopic = "" }: Props) {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
@@ -25,18 +25,21 @@ export default function LeadForm({ context = "Kontakt ogólny", showTopic }: Pro
 
   return (
     <form className="form-grid" onSubmit={handleSubmit}>
-      <input type="hidden" name="temat" value={context} />
-      <input required name="imie" placeholder="Imię i nazwisko" />
-      <input required name="telefon" type="tel" placeholder="Telefon" />
-      <input name="email" type="email" placeholder="E-mail (opcjonalnie)" />
-      {showTopic && (
-        <select name="sprawa" defaultValue="">
-          <option value="" disabled>Wybierz sprawę…</option>
-          {services.map((s) => (
-            <option key={s.slug} value={s.navTitle}>{s.navTitle}</option>
-          ))}
-        </select>
-      )}
+      <input type="hidden" name="context" value={context} />
+      <div className="row2">
+        <input required name="imie" placeholder="Imię *" autoComplete="given-name" />
+        <input required name="nazwisko" placeholder="Nazwisko *" autoComplete="family-name" />
+      </div>
+      <div className="row2">
+        <input required name="telefon" type="tel" placeholder="Telefon *" autoComplete="tel" />
+        <input required name="email" type="email" placeholder="E-mail *" autoComplete="email" />
+      </div>
+      <select required name="temat" defaultValue={defaultTopic}>
+        <option value="" disabled>Wybierz temat rozmowy *</option>
+        {topics.map((t) => (
+          <option key={t} value={t}>{t}</option>
+        ))}
+      </select>
       <textarea name="opis" rows={3} placeholder="Krótko opisz swoją sprawę (opcjonalnie)" />
       <label className="consent">
         <input required type="checkbox" />
