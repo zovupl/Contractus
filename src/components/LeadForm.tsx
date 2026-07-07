@@ -40,7 +40,6 @@ export default function LeadForm({ context = "Kontakt ogólny", defaultTopic = "
           <option key={t} value={t}>{t}</option>
         ))}
       </select>
-      <textarea name="opis" rows={3} placeholder="Krótko opisz swoją sprawę (opcjonalnie)" />
       <label className="consent">
         <input required type="checkbox" />
         <span>
