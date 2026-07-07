@@ -122,10 +122,8 @@ export function FinalCta() {
           Zostaw numer — oddzwaniamy w 24 godziny z bezpłatną analizą. Bez
           zobowiązań, bez opłat z góry.
         </p>
-        <div className="cform">
-          <input type="text" placeholder="Imię" aria-label="Imię" />
-          <input type="tel" placeholder="Telefon" aria-label="Telefon" />
-          <button className="btn btn-gold">Oddzwońcie do mnie</button>
+        <div className="cform-full">
+          <LeadForm context="Finalne CTA — dół strony" />
         </div>
       </div>
     </div>
