@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { contact } from "../data";
+import LogoMark from "./LogoMark";
 
 const links = [
   { to: "/sluzebnosc-przesylu", label: "Słupy na działce" },
@@ -33,7 +34,11 @@ export default function Navbar() {
       <header className="nav">
         <div className="wrap">
           <Link to="/" className="logo" onClick={() => setOpen(false)}>
-            <span className="mark">C</span>CONTRACTUS
+            <LogoMark />
+            <span className="logo-wm">
+              <b>CONTRACTUS</b>
+              <small>Centrum Odszkodowań</small>
+            </span>
           </Link>
           <nav>
             {links.map((l) => (
