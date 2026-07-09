@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
+import { Icon } from "../components/Icons";
 
 const offers = [
   { title: "Specjalista ds. odszkodowań", type: "Pełny etat · praca hybrydowa", desc: "Prowadzenie spraw klientów od zgłoszenia do wypłaty odszkodowania." },
@@ -23,7 +24,7 @@ export default function Kariera() {
           <div className="cards">
             {offers.map((o) => (
               <Reveal key={o.title} className="svc">
-                <div className="ic">💼</div>
+                <div className="ic"><Icon name="briefcase" /></div>
                 <span style={{ color: "var(--blue)", fontSize: 13, fontWeight: 600, marginBottom: 6 }}>{o.type}</span>
                 <h3>{o.title}</h3>
                 <p>{o.desc}</p>

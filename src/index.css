@@ -38,6 +38,8 @@ a{color:inherit;text-decoration:none;}
 .util .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;}
 .util a:hover{color:#fff;}
 .util .l{display:flex;gap:20px;} .util .r{display:flex;gap:18px;align-items:center;}
+.util span,.util .r a{display:inline-flex;align-items:center;gap:6px;}
+.util-ic{width:14px;height:14px;}
 @media(max-width:760px){.util .l{display:none;}}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
@@ -84,6 +86,29 @@ a{color:inherit;text-decoration:none;}
 .consult .ld{font-size:14px;color:var(--muted);margin:0 0 18px;}
 .consult .free{display:flex;align-items:baseline;gap:10px;margin:0 0 18px;padding:14px 16px;background:var(--soft);border-radius:12px;}
 .consult .free b{font-size:26px;color:var(--green);} .consult .free span{font-size:13px;color:var(--muted);}
+
+/* kalkulator */
+.calc{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:28px;}
+.calc::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2));}
+.calc .tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--blue);background:var(--soft-2);padding:6px 12px;border-radius:100px;}
+.calc h3{font-size:22px;color:var(--navy);margin:14px 0 3px;}
+.calc .ld{font-size:13px;color:var(--muted);margin:0 0 18px;}
+.field{margin-bottom:15px;}
+.field label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink);}
+.field label .val{color:var(--blue);font-variant-numeric:tabular-nums;}
+input[type=range]{width:100%;accent-color:var(--blue);cursor:pointer;}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.seg button{font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;padding:9px 4px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--muted);transition:.15s;}
+.seg button:hover{border-color:var(--blue);}
+.seg button.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.result{margin-top:20px;padding:20px;border-radius:14px;text-align:center;background:var(--soft-2);border:1px solid var(--line);}
+.result .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);}
+.result .amount{font-size:clamp(26px,3vw,34px);font-weight:800;margin:6px 0 2px;color:var(--green);font-variant-numeric:tabular-nums;}
+.result small{color:var(--muted);font-size:12px;}
+.capture{display:flex;gap:8px;margin-top:14px;}
+.capture input{flex:1;padding:13px 14px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;}
+.capture input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(30,114,190,.15);}
+.disc{font-size:11px;color:var(--muted);margin-top:12px;text-align:center;}
 
 /* form */
 .form-grid{display:flex;flex-direction:column;gap:12px;}
@@ -174,6 +199,20 @@ a{color:inherit;text-decoration:none;}
 .people .faces img{width:52px;height:52px;border:3px solid #fff;border-radius:50%;object-fit:cover;object-position:top;margin-left:-14px;box-shadow:var(--shadow-sm);}
 .people .faces img:first-child{margin-left:0;}
 .people .txt b{color:var(--navy);} .people .txt p{margin:2px 0 0;color:var(--muted);font-size:14px;}
+
+/* trust section */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:900px){.trust-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.trust-grid{grid-template-columns:1fr;}}
+.trust-card{display:flex;gap:15px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:transform .18s,box-shadow .2s,border-color .2s;}
+.trust-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--gold);}
+.trust-card .ic{flex-shrink:0;width:46px;height:46px;border-radius:12px;background:linear-gradient(160deg,var(--soft-2),var(--soft));display:grid;place-items:center;color:var(--blue);}
+.trust-card .ic svg{width:23px;height:23px;}
+.svc .ic svg{width:24px;height:24px;}
+.trustmini .mini-ic{width:15px;height:15px;}
+.advisor .cred .b svg{width:13px;height:13px;}
+.trust-card b{color:var(--navy);font-size:16px;}
+.trust-card p{margin:5px 0 0;color:var(--muted);font-size:14px;line-height:1.5;}
 
 /* reviews */
 .rc .rev-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}

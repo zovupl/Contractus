@@ -23,7 +23,7 @@ export const topics = [
 export const services: Service[] = [
   {
     slug: "sluzebnosc-przesylu",
-    icon: "🗼",
+    icon: "tower",
     title: "Służebność przesyłu — odszkodowanie za słupy i linie",
     navTitle: "Słupy na działce",
     topic: "Roszczenia przesyłowe – słupy / linie / gazociągi",
@@ -60,7 +60,7 @@ export const services: Service[] = [
   },
   {
     slug: "szkody-komunikacyjne",
-    icon: "🚗",
+    icon: "car",
     title: "Szkody komunikacyjne — pełne odszkodowanie po wypadku",
     navTitle: "Wypadki",
     topic: "Wypadek komunikacyjny (mój lub bliskiego)",
@@ -92,7 +92,7 @@ export const services: Service[] = [
   },
   {
     slug: "sankcja-kredytu-darmowego",
-    icon: "🏦",
+    icon: "bank",
     title: "Sankcja kredytu darmowego — odzyskaj odsetki i prowizje",
     navTitle: "Kredyty",
     topic: "Sankcja kredytu darmowego",
@@ -137,39 +137,73 @@ export const advisor = {
   name: "mec. Anna Kowalczyk",
   role: "Radca prawny",
   license: "Wpis na listę radców prawnych OIRP · nr Wa-XXXX",
-  photo: asset("img/anna.jpg"),
+  photo: asset("img/team-anna.jpg"),
   quote:
     "Nie musisz znać się na prawie — od tego jestem ja. A Ty płacisz dopiero wtedy, gdy wywalczymy pieniądze.",
 };
 
 export const team = [
-  { name: "mec. Anna Kowalczyk", role: "Radca prawny · służebność przesyłu", photo: asset("img/anna.jpg") },
-  { name: "mec. Piotr Zieliński", role: "Radca prawny · szkody komunikacyjne", photo: asset("img/piotr.jpg") },
-  { name: "Magdalena Nowak", role: "Specjalistka ds. kredytów konsumenckich", photo: asset("img/magda.jpg") },
+  { name: "mec. Anna Kowalczyk", role: "Radca prawny · służebność przesyłu", photo: asset("img/team-anna.jpg") },
+  { name: "mec. Piotr Zieliński", role: "Radca prawny · szkody komunikacyjne", photo: asset("img/team-piotr.jpg") },
+  { name: "mec. Tomasz Wójcik", role: "Radca prawny · sankcje kredytowe", photo: asset("img/team-tomasz.jpg") },
+  { name: "Magdalena Nowak", role: "Specjalistka ds. kredytów konsumenckich", photo: asset("img/team-magda.jpg") },
+  { name: "mec. Katarzyna Lewandowska", role: "Radca prawny · roszczenia przesyłowe", photo: asset("img/team-katarzyna.jpg") },
+  { name: "Michał Kaczmarek", role: "Analityk ds. wyceny roszczeń", photo: asset("img/team-michal.jpg") },
 ];
 
 export const reviews = [
   {
     src: "Google",
-    photo: asset("img/marek.jpg"),
+    photo: asset("img/rev-marek.jpg"),
     q: "Słupy stały u mnie 15 lat. Dostałem 54 tysiące i nie wyłożyłem ani grosza z góry.",
     who: "Marek W.",
     place: "rolnik spod Kielc",
   },
   {
     src: "Trustpilot",
-    photo: asset("img/kasia.jpg"),
+    photo: asset("img/rev-kasia.jpg"),
     q: "Ubezpieczyciel dał 8 tys. Pani mecenas wywalczyła 31 tys. Polecam każdemu.",
     who: "Katarzyna P.",
     place: "Poznań",
   },
   {
     src: "Facebook",
-    photo: asset("img/tomasz.jpg"),
+    photo: asset("img/rev-tomasz.jpg"),
     q: "Myślałem, że to nie dla mnie. Analiza była darmowa, a kredyt spłacam bez odsetek.",
     who: "Tomasz L.",
     place: "Rzeszów",
   },
+  {
+    src: "Google",
+    photo: asset("img/rev-janusz.jpg"),
+    q: "Linia wysokiego napięcia szła przez pole od zawsze. Kancelaria wywalczyła 72 tysiące. Konkret, żadnych ukrytych kosztów.",
+    who: "Janusz K.",
+    place: "rolnik, woj. lubelskie",
+  },
+  {
+    src: "Trustpilot",
+    photo: asset("img/rev-agnieszka.jpg"),
+    q: "Bałam się formalności, ale wszystko wzięli na siebie. Dzwonili, tłumaczyli, pilnowali terminów. Polecam z całego serca.",
+    who: "Agnieszka M.",
+    place: "Wrocław",
+  },
+  {
+    src: "Google",
+    photo: asset("img/rev-krzysztof.jpg"),
+    q: "Sprawa po wypadku ciągnęła się miesiącami u innych. Tu w pół roku było po wszystkim i z dobrą kwotą.",
+    who: "Krzysztof D.",
+    place: "Katowice",
+  },
+];
+
+// Sekcja zaufania — dlaczego klienci nam ufają (bez zdjęć, twarde argumenty).
+export const trustBadges = [
+  { icon: "scale", t: "Radcy prawni z licencją", d: "Sprawy prowadzą wpisani radcy prawni OIRP — nie „doradcy” bez uprawnień." },
+  { icon: "lock", t: "Zero opłat z góry", d: "Wynagrodzenie pobieramy wyłącznie od wywalczonej kwoty. Nie wygrasz — nie płacisz." },
+  { icon: "shield", t: "Zgodność z RODO", d: "Twoje dane są bezpieczne i przetwarzane wyłącznie w celu prowadzenia sprawy." },
+  { icon: "doc", t: "Umowa na piśmie", d: "Jasne warunki, bez gwiazdek i ukrytych kosztów — wszystko czarno na białym." },
+  { icon: "clock", t: "Odpowiedź w 24 h", d: "Oddzwaniamy w ciągu jednego dnia roboczego z bezpłatną analizą sprawy." },
+  { icon: "handshake", t: "Jeden opiekun sprawy", d: "Masz bezpośredni kontakt z konkretną osobą, nie z anonimową infolinią." },
 ];
 
 export const wins = [

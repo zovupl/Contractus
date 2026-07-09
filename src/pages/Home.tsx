@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import LeadForm from "../components/LeadForm";
-import { MediaStrip, Stats, ServicesGrid, Steps, Reviews, FinalCta, Team, PeopleStrip } from "../components/Sections";
+import Calculator from "../components/Calculator";
+import { Stats, ServicesGrid, Steps, Reviews, FinalCta, Team, PeopleStrip, TrustSection } from "../components/Sections";
 import Reveal from "../components/Reveal";
+import { Icon } from "../components/Icons";
 import { advisor } from "../data";
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
             <div className="trustmini">
               <span className="g"><span className="stars">★★★★★</span> 4,9 / 5</span>
               <span>ponad <b style={{ color: "var(--ink)" }}>312 opinii</b> Google</span>
-              <span className="g">🔒 Bez opłat z góry</span>
+              <span className="g"><Icon name="lock" className="mini-ic" /> Bez opłat z góry</span>
             </div>
             <div className="badges">
               <span className="badge"><span className="ic">✓</span> Analiza bezpłatna</span>
@@ -33,17 +34,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="consult" id="konsultacja">
-            <span className="tag">✓ Pierwsza konsultacja gratis</span>
-            <h3>Zamów bezpłatną konsultację</h3>
-            <p className="ld">Oddzwaniamy w 24 godziny i mówimy, ile możesz odzyskać.</p>
-            <div className="free"><b>0 zł</b><span>za analizę i wycenę Twojej sprawy</span></div>
-            <LeadForm context="Formularz główny — strona główna" />
-          </div>
+          <Calculator />
         </div>
       </section>
 
-      <MediaStrip />
       <Stats />
 
       <div id="uslugi" />
@@ -57,7 +51,7 @@ export default function Home() {
               <div className="name">{advisor.name}</div>
               <div className="role">{advisor.role} · prowadzi Twoją sprawę</div>
               <div className="quote">„{advisor.quote}"</div>
-              <div className="cred"><span className="b">⚖️</span> {advisor.license}</div>
+              <div className="cred"><span className="b"><Icon name="scale" /></span> {advisor.license}</div>
             </div>
           </Reveal>
           <Reveal>
@@ -75,6 +69,7 @@ export default function Home() {
 
       <Team />
       <Steps />
+      <TrustSection />
       <Reviews />
       <FinalCta />
     </>

@@ -1,19 +1,34 @@
 import { Link } from "react-router-dom";
-import { services, stats, reviews, team } from "../data";
+import { services, stats, reviews, team, trustBadges } from "../data";
 import Reveal from "./Reveal";
 import LeadForm from "./LeadForm";
+import { Icon, IconName } from "./Icons";
 
-export function MediaStrip() {
+export function TrustSection() {
   return (
-    <div className="media">
+    <section className="block">
       <div className="wrap">
-        <span>Jak w mediach:</span>
-        <b>Fakt</b><span>·</span><b>Onet</b><span>·</span>
-        <b>Business Insider</b><span>·</span><b>Gazeta Prawna</b>
+        <Reveal className="head">
+          <span className="eyebrow">Dlaczego nam ufają</span>
+          <h2>Konkrety, nie obietnice</h2>
+          <p>Sześć powodów, dla których klienci powierzają nam swoje sprawy.</p>
+        </Reveal>
+        <div className="trust-grid">
+          {trustBadges.map((b) => (
+            <Reveal key={b.t} className="trust-card">
+              <div className="ic"><Icon name={b.icon as IconName} /></div>
+              <div>
+                <b>{b.t}</b>
+                <p>{b.d}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
+
 
 export function Stats() {
   return (
@@ -43,7 +58,7 @@ export function ServicesGrid() {
           {services.map((s) => (
             <Reveal key={s.slug} className="svc">
               {s.primary && <span className="pill">Nasza specjalność</span>}
-              <div className="ic">{s.icon}</div>
+              <div className="ic"><Icon name={s.icon as IconName} /></div>
               <h3>{s.navTitle}</h3>
               <p>{s.short}</p>
               <Link to={`/${s.slug}`} className="go">Dowiedz się więcej →</Link>

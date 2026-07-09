@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { contact } from "../data";
 import LogoMark from "./LogoMark";
+import { Icon } from "./Icons";
 
 const links = [
   { to: "/sluzebnosc-przesylu", label: "Słupy na działce" },
@@ -21,11 +22,11 @@ export default function Navbar() {
       <div className="util">
         <div className="wrap">
           <div className="l">
-            <span>📍 Obsługujemy całą Polskę</span>
-            <span>⏱ {contact.hours}</span>
+            <span><Icon name="pin" className="util-ic" /> Obsługujemy całą Polskę</span>
+            <span><Icon name="clock" className="util-ic" /> {contact.hours}</span>
           </div>
           <div className="r">
-            <a href={`tel:${contact.phoneRaw}`}>📞 <b>{contact.phone}</b></a>
+            <a href={`tel:${contact.phoneRaw}`}><Icon name="phone" className="util-ic" /> <b>{contact.phone}</b></a>
             <a href="#">Panel klienta</a>
           </div>
         </div>
